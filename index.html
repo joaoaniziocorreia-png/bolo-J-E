@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>J E Divinos Bolos | Encomendas</title>
+
+    <meta name="description"
+          content="Faça sua encomenda de bolos na J E Divinos Bolos. Escolha seu bolo, recheio, cobertura e data de entrega.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --rosa: #d85b7f;
+            --rosa-escuro: #b73e62;
+            --rosa-claro: #fff1f5;
+            --creme: #fffaf6;
+            --marrom: #3b2925;
+            --cinza: #6f6562;
+            --branco: #ffffff;
+            --borda: #eadfe0;
+            --verde: #25a56a;
+            --sombra: 0 15px 45px rgba(80, 45, 50, .10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--creme);
+            color: var(--marrom);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 250, 246, .95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--marrom);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--rosa);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: var(--rosa-escuro);
+            letter-spacing: 1.5px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--marrom);
+            margin-left: 25px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--rosa);
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 25px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--rosa-claro);
+            color: var(--rosa-escuro);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--rosa);
+        }
+
+        .hero p {
+            color: var(--cinza);
+            font-size: 18px;
+            max-width: 580px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            background: var(--rosa);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .btn:hover {
+            background: var(--rosa-escuro);
+            transform: translateY(-2px);
+        }
+
+        .hero-card {
+            min-height: 430px;
+            border-radius: 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(216,91,127,.9),
+                    rgba(183,62,98,.9)
+                ),
+                url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80")
+                center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            color: white;
+            box-shadow: var(--sombra);
+        }
+
+        .hero-card-content {
+            background: rgba(0,0,0,.25);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 18px;
+            width: 100%;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .section-title {
+            max-width: 750px;
+            margin: auto auto 45px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--cinza);
+        }
+
+        /* SABORES */
+
+        .flavors {
+            background: white;
+        }
+
+        .flavor-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .flavor {
+            border: 1px solid var(--borda);
+            padding: 25px;
+            border-radius: 20px;
+            background: var(--creme);
+            transition: .2s;
+        }
+
+        .flavor:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra);
+        }
+
+        .flavor-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .flavor h3 {
+            margin-bottom: 7px;
+        }
+
+        .flavor p {
+            color: var(--cinza);
+            font-size: 14px;
+        }
+
+        /* FORMULÁRIO */
+
+        .order-section {
+            background: var(--rosa-claro);
+        }
+
+        .order-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr .65fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .form-card,
+        .summary-card {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: var(--sombra);
+        }
+
+        .form-card h2,
+        .summary-card h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--borda);
+            border-radius: 10px;
+            background: #fff;
+            color: var(--marrom);
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: .2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--rosa);
+            box-shadow: 0 0 0 3px rgba(216,91,127,.12);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .required {
+            color: var(--rosa);
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 22px;
+        }
+
+        /* RESUMO */
+
+        .summary-card {
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-box {
+            background: var(--rosa-claro);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #dfc6cc;
+            font-size: 14px;
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+
+        .summary-row span:first-child {
+            color: var(--cinza);
+        }
+
+        .summary-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--cinza);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--marrom);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+            margin-bottom: 7px;
+        }
+
+        footer p {
+            color: #d8ccca;
+            font-size: 14px;
+        }
+
+        .success-message {
+            display: none;
+            background: #e9fff4;
+            color: #16734a;
+            border: 1px solid #a9e5c8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 850px) {
+            .hero,
+            .order-container {
+                grid-template-columns: 1fr;
+            }
+
+            .flavor-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .summary-card {
+                position: static;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .hero {
+                padding-top: 50px;
+            }
+
+            .hero-card {
+                min-height: 330px;
+            }
+
+            .flavor-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .form-card,
+            .summary-card {
+                padding: 23px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header>
+    <div class="nav">
+
+        <a href="#" class="logo">
+            <div class="logo-icon">🎂</div>
+
+            <div class="logo-text">
+                <strong>J E Divinos Bolos</strong>
+                <span>BOLOS FEITOS COM AMOR</span>
+            </div>
+        </a>
+
+        <nav>
+            <a href="#sabores">Sabores</a>
+            <a href="#encomenda">Encomendar</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<main>
+
+<section class="hero">
+
+    <div>
+
+        <span class="badge">✨ Seu momento merece um bolo especial</span>
+
+        <h1>
+            Bolos que deixam
+            <span>momentos mais doces.</span>
+        </h1>
+
+        <p>
+            Escolha seu sabor, tamanho e decoração.
+            Faça sua encomenda na J E Divinos Bolos
+            de maneira rápida e fácil.
+        </p>
+
+        <a href="#encomenda" class="btn">
+            Fazer minha encomenda
+        </a>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="hero-card-content">
+            <h2>J E Divinos Bolos</h2>
+
+            <p>
+                Bolos preparados com carinho
+                para aniversários, festas e
+                momentos especiais.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SABORES -->
+
+<section id="sabores" class="flavors">
+
+    <div class="section-title">
+
+        <h2>Escolha seu sabor</h2>
+
+        <p>
+            Temos opções para deixar
+            sua comemoração ainda mais gostosa.
+        </p>
+
+    </div>
+
+    <div class="flavor-grid">
+
+        <div class="flavor">
+            <div class="flavor-icon">🍫</div>
+            <h3>Chocolate</h3>
+            <p>
+                Massa de chocolate com recheio
+                cremoso e muito saboroso.
+            </p>
+        </div>
+
+        <div class="flavor">
+            <div class="flavor-icon">🍓</div>
+            <h3>Morango</h3>
+            <p>
+                Combinação deliciosa de morango
+                com creme especial.
+            </p>
+        </div>
+
+        <div class="flavor">
+            <div class="flavor-icon">🥥</div>
+            <h3>Coco</h3>
+            <p>
+                Sabor suave e cremoso
+                para quem ama coco.
+            </p>
+        </div>
+
+        <div class="flavor">
+            <div class="flavor-icon">🍯</div>
+            <h3>Doce de Leite</h3>
+            <p>
+                Recheio cremoso de doce de leite
+                em uma massa macia.
+            </p>
+        </div>
+
+        <div class="flavor">
+            <div class="flavor-icon">🍍</div>
+            <h3>Abacaxi</h3>
+            <p>
+                Uma opção refrescante,
+                doce e equilibrada.
+            </p>
+        </div>
+
+        <div class="flavor">
+            <div class="flavor-icon">❤️</div>
+            <h3>Personalizado</h3>
+            <p>
+                Escolha os detalhes e conte
+                para nós como deseja seu bolo.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FORMULÁRIO DE ENCOMENDA -->
+
+<section id="encomenda" class="order-section">
+
+    <div class="section-title">
+
+        <h2>Faça sua encomenda</h2>
+
+        <p>
+            Preencha os dados abaixo.
+            Sua solicitação será enviada para nossa equipe.
+        </p>
+
+    </div>
+
+
+    <div class="order-container">
+
+        <!-- FORM -->
+
+        <div class="form-card">
+
+            <h2>Dados da encomenda</h2>
+
+            <form
+                id="orderForm"
+                action="https://formsubmit.co/joaoaniziocorreia@gmail.com"
+                method="POST"
+                <tipo de entrada="texto" nome="JE" necessario>
+                <tipo de entrada="email" nome="joaoaniziocorreia@gmail.com" necessario>
+                <tipo de botão="envia">envia</botão>
+                
+                </formulário>
+
+        
+                <!-- CONFIGURAÇÕES DO EMAIL -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="🎂 Nova encomenda - J E Divinos Bolos"
+                >
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                >
+
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="true"
+                >
+
+                <!-- DADOS DO CLIENTE -->
+
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label>
+                            Nome completo
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="nome"
+                            placeholder="Seu nome"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            WhatsApp / Telefone
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            name="telefone"
+                            placeholder="(11) 99999-9999"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Seu e-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="seuemail@gmail.com"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Data da entrega
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            name="data_entrega"
+                            id="dataEntrega"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Tipo de bolo
+                            <span class="required">*</span>
+                        </label>
+
+                        <select name="tipo_bolo" id="tipoBolo" required>
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="Bolo tradicional">
+                                Bolo tradicional
+                            </option>
+
+                            <option value="Bolo de aniversário">
+                                Bolo de aniversário
+                            </option>
+
+                            <option value="Bolo personalizado">
+                                Bolo personalizado
+                            </option>
+
+                            <option value="Bolo para casamento">
+                                Bolo para casamento
+                            </option>
+
+                            <option value="Outro">
+                                Outro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Tamanho
+                            <span class="required">*</span>
+                        </label>
+
+                        <select name="tamanho" id="tamanho" required>
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="Pequeno - 10 pessoas">
+                                Pequeno - 10 pessoas
+                            </option>
+
+                            <option value="Médio - 15 pessoas">
+                                Médio - 15 pessoas
+                            </option>
+
+                            <option value="Grande - 25 pessoas">
+                                Grande - 25 pessoas
+                            </option>
+
+                            <option value="Extra grande - 40 pessoas">
+                                Extra grande - 40 pessoas
+                            </option>
+
+                            <option value="Personalizado">
+                                Personalizado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Sabor
+                            <span class="required">*</span>
+                        </label>
+
+                        <select name="sabor" id="sabor" required>
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="Chocolate">
+                                Chocolate
+                            </option>
+
+                            <option value="Morango">
+                                Morango
+                            </option>
+
+                            <option value="Coco">
+                                Coco
+                            </option>
+
+                            <option value="Doce de leite">
+                                Doce de leite
+                            </option>
+
+                            <option value="Abacaxi">
+                                Abacaxi
+                            </option>
+
+                            <option value="Outro">
+                                Outro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Quantidade
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            name="quantidade"
+                            id="quantidade"
+                            min="1"
+                            max="20"
+                            value="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Recheio
+                        </label>
+
+                        <input
+                            type="text"
+                            name="recheio"
+                            id="recheio"
+                            placeholder="Ex.: brigadeiro, ninho, doce de leite..."
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Cobertura / decoração
+                        </label>
+
+                        <input
+                            type="text"
+                            name="cobertura"
+                            id="cobertura"
+                            placeholder="Ex.: chantilly rosa com morangos"
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Mensagem no bolo
+                        </label>
+
+                        <input
+                            type="text"
+                            name="mensagem_bolo"
+                            id="mensagemBolo"
+                            placeholder="Ex.: Feliz aniversário, Maria!"
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Endereço / local de entrega
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            name="endereco"
+                            id="endereco"
+                            placeholder="Rua, número, bairro..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Observações
+                        </label>
+
+                        <textarea
+                            name="observacoes"
+                            id="observacoes"
+                            placeholder="Conte algum detalhe importante sobre sua encomenda..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn submit-btn"
+                >
+                    🎂 Enviar minha encomenda
+                </button>
+
+
+                <div
+                    class="success-message"
+                    id="successMessage"
+                >
+                    Sua encomenda foi enviada!
+                    Aguarde nosso contato para confirmar
+                    disponibilidade, valor e entrega.
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- RESUMO -->
+
+        <aside class="summary-card">
+
+            <h2>Resumo</h2>
+
+            <div class="summary-box">
+
+                <div class="summary-row">
+                    <span>Bolo</span>
+                    <strong id="resumoBolo">
+                        —
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Tamanho</span>
+                    <strong id="resumoTamanho">
+                        —
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Sabor</span>
+                    <strong id="resumoSabor">
+                        —
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Quantidade</span>
+                    <strong id="resumoQuantidade">
+                        1
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Entrega</span>
+                    <strong id="resumoData">
+                        —
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Cliente</span>
+                    <strong id="resumoCliente">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+            <p class="summary-note">
+                💡 O valor final do bolo será informado
+                pela nossa equipe após analisarmos
+                sua encomenda e os detalhes da decoração.
+            </p>
+
+        </aside>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>J E Divinos Bolos</h3>
+
+    <p>
+        Bolos feitos com carinho para momentos especiais.
+    </p>
+
+    <p style="margin-top:10px;">
+        © 2026 J E Divinos Bolos — Todos os direitos reservados.
+    </p>
+
+</footer>
+
+
+<script>
+
+    // ELEMENTOS
+
+    const form = document.getElementById("orderForm");
+
+    const tipoBolo = document.getElementById("tipoBolo");
+    const tamanho = document.getElementById("tamanho");
+    const sabor = document.getElementById("sabor");
+    const quantidade = document.getElementById("quantidade");
+
+    const dataEntrega = document.getElementById("dataEntrega");
+
+    const resumoBolo = document.getElementById("resumoBolo");
+    const resumoTamanho = document.getElementById("resumoTamanho");
+    const resumoSabor = document.getElementById("resumoSabor");
+    const resumoQuantidade = document.getElementById("resumoQuantidade");
+    const resumoData = document.getElementById("resumoData");
+    const resumoCliente = document.getElementById("resumoCliente");
+
+    const nome = document.querySelector('input[name="nome"]');
+
+
+    // IMPEDE DATA PASSADA
+
+    const hoje = new Date();
+
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoje.getDate()).padStart(2, "0");
+
+    dataEntrega.min = `${ano}-${mes}-${dia}`;
+
+
+    // ATUALIZA RESUMO
+
+    function atualizarResumo() {
+
+        resumoBolo.textContent =
+            tipoBolo.value || "—";
+
+        resumoTamanho.textContent =
+            tamanho.value || "—";
+
+        resumoSabor.textContent =
+            sabor.value || "—";
+
+        resumoQuantidade.textContent =
+            quantidade.value || "1";
+
+        resumoCliente.textContent =
+            nome.value || "—";
+
+        if (dataEntrega.value) {
+
+            const partes = dataEntrega.value.split("-");
+
+            resumoData.textContent =
+                `${partes[2]}/${partes[1]}/${partes[0]}`;
+
+        } else {
+
+            resumoData.textContent = "—";
+
+        }
+    }
+
+
+    // CAMPOS QUE ATUALIZAM RESUMO
+
+    [
+        tipoBolo,
+        tamanho,
+        sabor,
+        quantidade,
+        dataEntrega,
+        nome
+    ].forEach(campo => {
+
+        campo.addEventListener(
+            "input",
+            atualizarResumo
+        );
+
+        campo.addEventListener(
+            "change",
+            atualizarResumo
+        );
+
+    });
+
+
+    // FORMATA TELEFONE
+
+    const telefone =
+        document.querySelector('input[name="telefone"]');
+
+    telefone.addEventListener("input", function () {
+
+        let valor = this.value.replace(/\D/g, "");
+
+        if (valor.length > 11) {
+            valor = valor.substring(0, 11);
+        }
+
+        if (valor.length <= 10) {
+
+            valor = valor.replace(
+                /^(\d{2})(\d{4})(\d{0,4}).*/,
+                "($1) $2-$3"
+            );
+
+        } else {
+
+            valor = valor.replace(
+                /^(\d{2})(\d{5})(\d{0,4}).*/,
+                "($1) $2-$3"
+            );
+
+        }
+
+        this.value = valor;
+
+    });
+
+
+    // ENVIO
+
+    form.addEventListener("submit", function () {
+
+        /*
+         * O formulário continuará com POST normal
+         * para o FormSubmit.
+         *
+         * Esta função apenas mostra uma mensagem
+         * antes do redirecionamento.
+         */
+
+        const botao =
+            form.querySelector(".submit-btn");
+
+        botao.textContent =
+            "Enviando encomenda...";
+
+        botao.disabled = true;
+
+    });
+
+
+    // INICIALIZA
+
+    atualizarResumo();
+
+</script>
+
+</body>
+</html>
