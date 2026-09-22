@@ -1,1220 +1,1141 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>J E Divinos Bolos | Encomendas</title>
+    <title>Escola de Música | Prof. Clóvis</title>
 
     <meta name="description"
-          content="Faça sua encomenda de bolos na J E Divinos Bolos. Escolha seu bolo, recheio, cobertura e data de entrega.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-          rel="stylesheet">
+        content="Escola de Música do Professor Clóvis. Aulas de violão, guitarra, contrabaixo, teclado e bateria em Itaim Paulista.">
 
     <style>
-        :root {
-            --rosa: #d85b7f;
-            --rosa-escuro: #b73e62;
-            --rosa-claro: #fff1f5;
-            --creme: #fffaf6;
-            --marrom: #3b2925;
-            --cinza: #6f6562;
-            --branco: #ffffff;
-            --borda: #eadfe0;
-            --verde: #25a56a;
-            --sombra: 0 15px 45px rgba(80, 45, 50, .10);
-        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: "DM Sans", sans-serif;
-            background: var(--creme);
-            color: var(--marrom);
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #182b55;
         }
 
-        /* HEADER */
+        /* =========================
+           MENU
+        ========================= */
 
         header {
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 1000;
-            background: rgba(255, 250, 246, .95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--borda);
+            left: 0;
+            z-index: 999;
+
+            background: rgba(255,255,255,0.96);
+
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
-        .nav {
+        nav {
             max-width: 1200px;
+            height: 75px;
+
             margin: auto;
-            padding: 18px 25px;
+
+            padding: 0 25px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            text-decoration: none;
-            color: var(--marrom);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--rosa);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 23px;
-        }
-
-        .logo-text strong {
-            display: block;
-            font-family: "Playfair Display", serif;
             font-size: 22px;
+            font-weight: 800;
+            color: #173c8c;
         }
 
-        .logo-text span {
-            font-size: 12px;
-            color: var(--rosa-escuro);
-            letter-spacing: 1.5px;
+        .logo span {
+            color: #8b1dcc;
         }
 
-        nav a {
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .menu a {
+            color: #182b55;
             text-decoration: none;
-            color: var(--marrom);
-            margin-left: 25px;
-            font-weight: 600;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--rosa);
+        .menu a:hover {
+            color: #8b1dcc;
         }
 
-        /* HERO */
+        .menu-button {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 80px 25px;
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: 50px;
+            min-height: 100vh;
+
+            padding: 130px 7% 70px;
+
+            background:
+                radial-gradient(
+                    circle at 15% 40%,
+                    rgba(255,195,0,.35),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(150,40,220,.20),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #fff5fb,
+                    #f0f4ff
+                );
+
+            display: flex;
             align-items: center;
         }
 
-        .badge {
-            display: inline-block;
-            background: var(--rosa-claro);
-            color: var(--rosa-escuro);
-            padding: 8px 15px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
         }
 
         .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 22px;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 0.95;
+
+            color: #173c8c;
+
+            margin: 20px 0;
         }
 
         .hero h1 span {
-            color: var(--rosa);
+            color: #8b1dcc;
         }
 
-        .hero p {
-            color: var(--cinza);
-            font-size: 18px;
-            max-width: 580px;
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.7;
+
+            color: #52627d;
+
+            max-width: 600px;
+
             margin-bottom: 30px;
         }
 
-        .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            background: var(--rosa);
+        .label {
+            display: inline-block;
+
+            background: #8b1dcc;
+
             color: white;
-            padding: 15px 25px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 700;
-            transition: .2s;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
         }
 
-        .btn:hover {
-            background: var(--rosa-escuro);
-            transform: translateY(-2px);
-        }
-
-        .hero-card {
-            min-height: 430px;
-            border-radius: 30px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(216,91,127,.9),
-                    rgba(183,62,98,.9)
-                ),
-                url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80")
-                center/cover;
+        .buttons {
             display: flex;
-            align-items: flex-end;
-            padding: 30px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 16px 25px;
+
+            border-radius: 40px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .button-primary {
+            background: #8b1dcc;
             color: white;
-            box-shadow: var(--sombra);
         }
 
-        .hero-card-content {
-            background: rgba(0,0,0,.25);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 18px;
-            width: 100%;
+        .button-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(139,29,204,.3);
         }
 
-        /* SEÇÕES */
+        .button-outline {
+            border: 2px solid #173c8c;
+            color: #173c8c;
+        }
+
+        .button-outline:hover {
+            background: #173c8c;
+            color: white;
+        }
+
+        /* =========================
+           NOTA MUSICAL
+        ========================= */
+
+        .music {
+            min-height: 450px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .note {
+            font-size: 300px;
+
+            color: #6519cf;
+
+            text-shadow:
+                30px 15px 0 #ed2088,
+                -20px 25px 0 #e8b900;
+
+            transform: rotate(-10deg);
+
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform:
+                    translateY(0)
+                    rotate(-10deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-20px)
+                    rotate(-7deg);
+            }
+
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
 
         section {
-            padding: 80px 25px;
+            padding: 100px 7%;
         }
 
-        .section-title {
-            max-width: 750px;
-            margin: auto auto 45px;
+        .title {
             text-align: center;
+
+            margin-bottom: 60px;
         }
 
-        .section-title h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 42px;
+        .title h2 {
+            font-size: 45px;
+            color: #173c8c;
+        }
+
+        .title p {
+            color: #718096;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           SOBRE
+        ========================= */
+
+        .about {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+            color: #52627d;
+        }
+
+        .about strong {
+            color: #8b1dcc;
+        }
+
+        /* =========================
+           INSTRUMENTOS
+        ========================= */
+
+        .courses {
+            background: #f7f3ff;
+        }
+
+        .cards {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 30px
+                rgba(30,50,100,.08);
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(30,50,100,.15);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #173c8c;
             margin-bottom: 12px;
         }
 
-        .section-title p {
-            color: var(--cinza);
+        .card p {
+            color: #718096;
+            line-height: 1.5;
         }
 
-        /* SABORES */
+        /* =========================
+           PROFESSOR
+        ========================= */
 
-        .flavors {
-            background: white;
-        }
+        .teacher {
+            max-width: 900px;
 
-        .flavor-grid {
-            max-width: 1200px;
             margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+
+            grid-template-columns:
+                220px 1fr;
+
+            gap: 50px;
+
+            align-items: center;
         }
 
-        .flavor {
-            border: 1px solid var(--borda);
-            padding: 25px;
-            border-radius: 20px;
-            background: var(--creme);
-            transition: .2s;
+        .teacher-photo {
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffc400,
+                    #8b1dcc
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 100px;
+
+            box-shadow:
+                0 15px 35px
+                rgba(100,30,200,.25);
         }
 
-        .flavor:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--sombra);
+        .teacher h2 {
+            color: #173c8c;
+            font-size: 38px;
+
+            margin-bottom: 20px;
         }
 
-        .flavor-icon {
-            font-size: 35px;
-            margin-bottom: 10px;
+        .teacher p {
+            color: #52627d;
+
+            line-height: 1.8;
+
+            font-size: 18px;
         }
 
-        .flavor h3 {
-            margin-bottom: 7px;
+        /* =========================
+           PREÇO
+        ========================= */
+
+        .price-section {
+            background:
+                linear-gradient(
+                    135deg,
+                    #29106d,
+                    #8b1dcc
+                );
+
+            text-align: center;
         }
 
-        .flavor p {
-            color: var(--cinza);
-            font-size: 14px;
+        .price-section .title h2 {
+            color: white;
         }
 
-        /* FORMULÁRIO */
-
-        .order-section {
-            background: var(--rosa-claro);
+        .price-section .title p {
+            color: #eee;
         }
 
-        .order-container {
-            max-width: 1100px;
+        .price-box {
+            max-width: 500px;
+
             margin: auto;
-            display: grid;
-            grid-template-columns: 1fr .65fr;
-            gap: 30px;
-            align-items: start;
-        }
 
-        .form-card,
-        .summary-card {
+            padding: 45px 30px;
+
             background: white;
-            padding: 35px;
-            border-radius: 25px;
-            box-shadow: var(--sombra);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,.25);
         }
 
-        .form-card h2,
-        .summary-card h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 30px;
+        .price-box h3 {
+            color: #173c8c;
+            font-size: 25px;
+        }
+
+        .price {
+            color: #8b1dcc;
+
+            font-size: 75px;
+
+            font-weight: 900;
+
+            margin: 15px 0;
+        }
+
+        .price small {
+            font-size: 20px;
+        }
+
+        .benefits {
+            list-style: none;
+
+            line-height: 2.3;
+
+            color: #52627d;
+
             margin-bottom: 25px;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
+        /* =========================
+           LOCALIZAÇÃO
+        ========================= */
+
+        .location {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
         }
 
-        .field {
-            display: flex;
-            flex-direction: column;
+        .address {
+            background: #f7f3ff;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            color: #52627d;
         }
 
-        .field.full {
-            grid-column: 1 / -1;
+        .address strong {
+            color: #173c8c;
         }
 
-        label {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 7px;
+        /* =========================
+           CONTATO
+        ========================= */
+
+        .contact {
+            background: #eef2ff;
+
+            text-align: center;
         }
 
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 13px 14px;
-            border: 1px solid var(--borda);
-            border-radius: 10px;
-            background: #fff;
-            color: var(--marrom);
-            font-family: inherit;
-            font-size: 15px;
-            outline: none;
-            transition: .2s;
+        .contact-box {
+            max-width: 700px;
+
+            margin: auto;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: var(--rosa);
-            box-shadow: 0 0 0 3px rgba(216,91,127,.12);
-        }
+        .contact-item {
+            background: white;
 
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
+            padding: 22px;
 
-        .required {
-            color: var(--rosa);
-        }
+            margin: 15px 0;
 
-        .submit-btn {
-            width: 100%;
-            margin-top: 22px;
-        }
-
-        /* RESUMO */
-
-        .summary-card {
-            position: sticky;
-            top: 100px;
-        }
-
-        .summary-box {
-            background: var(--rosa-claro);
             border-radius: 15px;
-            padding: 20px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,.06);
+
+            font-size: 18px;
         }
 
-        .summary-row {
+        .contact-item strong {
+            color: #173c8c;
+        }
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 65px;
+            height: 65px;
+
+            border-radius: 50%;
+
+            background: #25D366;
+
+            color: white;
+
             display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 10px 0;
-            border-bottom: 1px dashed #dfc6cc;
-            font-size: 14px;
+
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 32px;
+
+            z-index: 2000;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,.25);
         }
 
-        .summary-row:last-child {
-            border-bottom: none;
-        }
-
-        .summary-row span:first-child {
-            color: var(--cinza);
-        }
-
-        .summary-note {
-            margin-top: 20px;
-            font-size: 13px;
-            color: var(--cinza);
-        }
-
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: var(--marrom);
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
+            background: #111827;
 
-        footer h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 27px;
-            margin-bottom: 7px;
+            color: white;
+
+            text-align: center;
+
+            padding: 35px;
         }
 
         footer p {
-            color: #d8ccca;
-            font-size: 14px;
+            margin: 5px;
+            opacity: .8;
         }
 
-        .success-message {
-            display: none;
-            background: #e9fff4;
-            color: #16734a;
-            border: 1px solid #a9e5c8;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
+        /* =========================
+           CELULAR
+        ========================= */
 
-        /* RESPONSIVO */
+        @media(max-width:950px) {
 
-        @media (max-width: 850px) {
-            .hero,
-            .order-container {
+            .hero-container {
                 grid-template-columns: 1fr;
+
+                text-align: center;
             }
 
-            .flavor-grid {
-                grid-template-columns: 1fr 1fr;
+            .subtitle {
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .summary-card {
-                position: static;
+            .buttons {
+                justify-content: center;
             }
 
-            nav {
+            .cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .music {
+                min-height: 300px;
+            }
+
+            .note {
+                font-size: 230px;
+            }
+
+        }
+
+        @media(max-width:650px) {
+
+            .menu {
                 display: none;
-            }
-        }
 
-        @media (max-width: 550px) {
-            .hero {
-                padding-top: 50px;
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                text-align: center;
+
+                box-shadow:
+                    0 10px 20px
+                    rgba(0,0,0,.1);
             }
 
-            .hero-card {
-                min-height: 330px;
+            .menu.active {
+                display: flex;
             }
 
-            .flavor-grid,
-            .form-grid {
+            .menu-button {
+                display: block;
+            }
+
+            .cards {
                 grid-template-columns: 1fr;
             }
 
-            .field.full {
-                grid-column: auto;
+            .teacher {
+                grid-template-columns: 1fr;
+
+                text-align: center;
             }
 
-            .form-card,
-            .summary-card {
-                padding: 23px;
+            .teacher-photo {
+                margin: auto;
             }
 
-            .section-title h2 {
-                font-size: 34px;
+            section {
+                padding: 75px 5%;
             }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .title h2 {
+                font-size: 36px;
+            }
+
+            .note {
+                font-size: 180px;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
-<!-- CABEÇALHO -->
+
+<!-- =========================
+     MENU
+========================= -->
 
 <header>
-    <div class="nav">
 
-        <a href="#" class="logo">
-            <div class="logo-icon">🎂</div>
+    <nav>
 
-            <div class="logo-text">
-                <strong>J E Divinos Bolos</strong>
-                <span>BOLOS FEITOS COM AMOR</span>
-            </div>
-        </a>
+        <div class="logo">
+            🎵 Escola <span>de Música</span>
+        </div>
 
-        <nav>
-            <a href="#sabores">Sabores</a>
-            <a href="#encomenda">Encomendar</a>
-        </nav>
+        <div
+            class="menu-button"
+            onclick="abrirMenu()">
 
-    </div>
+            ☰
+
+        </div>
+
+        <ul class="menu" id="menu">
+
+            <li>
+                <a href="#inicio">Início</a>
+            </li>
+
+            <li>
+                <a href="#sobre">Sobre</a>
+            </li>
+
+            <li>
+                <a href="#instrumentos">Instrumentos</a>
+            </li>
+
+            <li>
+                <a href="#professor">Professor</a>
+            </li>
+
+            <li>
+                <a href="#mensalidade">Mensalidade</a>
+            </li>
+
+            <li>
+                <a href="#contato">Contato</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     INÍCIO
+========================= -->
 
-<main>
+<section class="hero" id="inicio">
 
-<section class="hero">
+    <div class="hero-container">
 
-    <div>
+        <div>
 
-        <span class="badge">✨ Seu momento merece um bolo especial</span>
+            <div class="label">
+                🎼 ESCOLA DE MÚSICA
+            </div>
 
-        <h1>
-            Bolos que deixam
-            <span>momentos mais doces.</span>
-        </h1>
+            <h1>
+                Aprenda a
+                <span>tocar música.</span>
+            </h1>
+
+            <p class="subtitle">
+
+                Desenvolva seu talento musical
+                com aulas de violão, guitarra,
+                contrabaixo, teclado e bateria.
+
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="button button-primary"
+                    href="https://wa.me/5511932138021"
+                    target="_blank">
+
+                    📱 Quero me matricular
+
+                </a>
+
+                <a
+                    class="button button-outline"
+                    href="#instrumentos">
+
+                    Conheça as aulas
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="music">
+
+            <div class="note">
+                ♪
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+
+<section id="sobre">
+
+    <div class="title">
+
+        <h2>Sobre a Escola</h2>
 
         <p>
-            Escolha seu sabor, tamanho e decoração.
-            Faça sua encomenda na J E Divinos Bolos
-            de maneira rápida e fácil.
+            Transforme sua paixão pela música em habilidade
         </p>
 
-        <a href="#encomenda" class="btn">
-            Fazer minha encomenda
+    </div>
+
+    <div class="about">
+
+        <p>
+
+            A <strong>Escola de Música do Prof. Clóvis</strong>
+            oferece aulas para quem deseja começar
+            a aprender música ou desenvolver ainda
+            mais suas habilidades.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            As aulas são realizadas
+            <strong>1 vez por semana</strong>,
+            com duração de
+            <strong>1 hora</strong>.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INSTRUMENTOS
+========================= -->
+
+<section class="courses" id="instrumentos">
+
+    <div class="title">
+
+        <h2>Aprenda seu instrumento</h2>
+
+        <p>
+            Escolha o instrumento que combina com você
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎸
+            </div>
+
+            <h3>Violão</h3>
+
+            <p>
+                Aprenda acordes,
+                ritmos e músicas.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎸
+            </div>
+
+            <h3>Guitarra</h3>
+
+            <p>
+                Aprenda riffs,
+                solos e técnicas.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎻
+            </div>
+
+            <h3>Contrabaixo</h3>
+
+            <p>
+                Desenvolva groove,
+                ritmo e técnica.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎹
+            </div>
+
+            <h3>Teclado</h3>
+
+            <p>
+                Aprenda acordes,
+                melodias e músicas.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🥁
+            </div>
+
+            <h3>Bateria</h3>
+
+            <p>
+                Desenvolva ritmo,
+                coordenação e técnica.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROFESSOR
+========================= -->
+
+<section id="professor">
+
+    <div class="title">
+
+        <h2>Seu Professor</h2>
+
+        <p>
+            Aprenda com acompanhamento
+        </p>
+
+    </div>
+
+
+    <div class="teacher">
+
+        <div class="teacher-photo">
+            🎼
+        </div>
+
+        <div>
+
+            <h2>
+                Prof. Clóvis
+            </h2>
+
+            <p>
+
+                Professor de música dedicado
+                ao ensino de instrumentos
+                e desenvolvimento musical.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                Escolha seu instrumento,
+                agende sua aula e comece
+                sua jornada musical.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENSALIDADE
+========================= -->
+
+<section
+    class="price-section"
+    id="mensalidade">
+
+    <div class="title">
+
+        <h2>Mensalidade</h2>
+
+        <p>
+            Comece sua jornada musical
+        </p>
+
+    </div>
+
+
+    <div class="price-box">
+
+        <h3>
+            Plano de aulas
+        </h3>
+
+        <div class="price">
+
+            <small>R$</small>
+            70
+            <small>/mês</small>
+
+        </div>
+
+
+        <ul class="benefits">
+
+            <li>
+                ✓ 1 aula por semana
+            </li>
+
+            <li>
+                ✓ 1 hora de duração
+            </li>
+
+            <li>
+                ✓ Escolha seu instrumento
+            </li>
+
+            <li>
+                ✓ Acompanhamento do professor
+            </li>
+
+        </ul>
+
+
+        <a
+            class="button button-primary"
+            href="https://wa.me/5511932138021"
+            target="_blank">
+
+            📱 Quero fazer minha matrícula
+
         </a>
 
     </div>
 
-    <div class="hero-card">
-
-        <div class="hero-card-content">
-            <h2>J E Divinos Bolos</h2>
-
-            <p>
-                Bolos preparados com carinho
-                para aniversários, festas e
-                momentos especiais.
-            </p>
-        </div>
-
-    </div>
-
 </section>
 
 
-<!-- SABORES -->
+<!-- =========================
+     LOCALIZAÇÃO
+========================= -->
 
-<section id="sabores" class="flavors">
+<section>
 
-    <div class="section-title">
+    <div class="title">
 
-        <h2>Escolha seu sabor</h2>
-
-        <p>
-            Temos opções para deixar
-            sua comemoração ainda mais gostosa.
-        </p>
-
-    </div>
-
-    <div class="flavor-grid">
-
-        <div class="flavor">
-            <div class="flavor-icon">🍫</div>
-            <h3>Chocolate</h3>
-            <p>
-                Massa de chocolate com recheio
-                cremoso e muito saboroso.
-            </p>
-        </div>
-
-        <div class="flavor">
-            <div class="flavor-icon">🍓</div>
-            <h3>Morango</h3>
-            <p>
-                Combinação deliciosa de morango
-                com creme especial.
-            </p>
-        </div>
-
-        <div class="flavor">
-            <div class="flavor-icon">🥥</div>
-            <h3>Coco</h3>
-            <p>
-                Sabor suave e cremoso
-                para quem ama coco.
-            </p>
-        </div>
-
-        <div class="flavor">
-            <div class="flavor-icon">🍯</div>
-            <h3>Doce de Leite</h3>
-            <p>
-                Recheio cremoso de doce de leite
-                em uma massa macia.
-            </p>
-        </div>
-
-        <div class="flavor">
-            <div class="flavor-icon">🍍</div>
-            <h3>Abacaxi</h3>
-            <p>
-                Uma opção refrescante,
-                doce e equilibrada.
-            </p>
-        </div>
-
-        <div class="flavor">
-            <div class="flavor-icon">❤️</div>
-            <h3>Personalizado</h3>
-            <p>
-                Escolha os detalhes e conte
-                para nós como deseja seu bolo.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FORMULÁRIO DE ENCOMENDA -->
-
-<section id="encomenda" class="order-section">
-
-    <div class="section-title">
-
-        <h2>Faça sua encomenda</h2>
+        <h2>Onde estamos</h2>
 
         <p>
-            Preencha os dados abaixo.
-            Sua solicitação será enviada para nossa equipe.
+            Venha conhecer a escola
         </p>
 
     </div>
 
 
-    <div class="order-container">
+    <div class="location">
 
-        <!-- FORM -->
+        <div class="address">
 
-        <div class="form-card">
+            📍
 
-            <h2>Dados da encomenda</h2>
+            <strong>
+                Rua Celso Barbosa Lima, 97
+            </strong>
 
-            <form
-                id="orderForm"
-                action="https://formsubmit.co/joaoaniziocorreia@gmail.com"
-                method="POST"
-                <tipo de entrada="texto" nome="JE" necessario>
-                <tipo de entrada="email" nome="joaoaniziocorreia@gmail.com" necessario>
-                <tipo de botão="envia">envia</botão>
-                
-                </formulário>
+            <br>
 
-        
-                <!-- CONFIGURAÇÕES DO EMAIL -->
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="🎂 Nova encomenda - J E Divinos Bolos"
-                >
-
-                <input
-                    type="hidden"
-                    name="_template"
-                    value="table"
-                >
-
-                <input
-                    type="hidden"
-                    name="_captcha"
-                    value="true"
-                >
-
-                <!-- DADOS DO CLIENTE -->
-
-                <div class="form-grid">
-
-                    <div class="field">
-
-                        <label>
-                            Nome completo
-                            <span class="required">*</span>
-                        </label>
-
-                        <input
-                            type="text"
-                            name="nome"
-                            placeholder="Seu nome"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            WhatsApp / Telefone
-                            <span class="required">*</span>
-                        </label>
-
-                        <input
-                            type="tel"
-                            name="telefone"
-                            placeholder="(11) 99999-9999"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            Seu e-mail
-                        </label>
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="seuemail@gmail.com"
-                        >
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            Data da entrega
-                            <span class="required">*</span>
-                        </label>
-
-                        <input
-                            type="date"
-                            name="data_entrega"
-                            id="dataEntrega"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            Tipo de bolo
-                            <span class="required">*</span>
-                        </label>
-
-                        <select name="tipo_bolo" id="tipoBolo" required>
-
-                            <option value="">
-                                Selecione
-                            </option>
-
-                            <option value="Bolo tradicional">
-                                Bolo tradicional
-                            </option>
-
-                            <option value="Bolo de aniversário">
-                                Bolo de aniversário
-                            </option>
-
-                            <option value="Bolo personalizado">
-                                Bolo personalizado
-                            </option>
-
-                            <option value="Bolo para casamento">
-                                Bolo para casamento
-                            </option>
-
-                            <option value="Outro">
-                                Outro
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            Tamanho
-                            <span class="required">*</span>
-                        </label>
-
-                        <select name="tamanho" id="tamanho" required>
-
-                            <option value="">
-                                Selecione
-                            </option>
-
-                            <option value="Pequeno - 10 pessoas">
-                                Pequeno - 10 pessoas
-                            </option>
-
-                            <option value="Médio - 15 pessoas">
-                                Médio - 15 pessoas
-                            </option>
-
-                            <option value="Grande - 25 pessoas">
-                                Grande - 25 pessoas
-                            </option>
-
-                            <option value="Extra grande - 40 pessoas">
-                                Extra grande - 40 pessoas
-                            </option>
-
-                            <option value="Personalizado">
-                                Personalizado
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            Sabor
-                            <span class="required">*</span>
-                        </label>
-
-                        <select name="sabor" id="sabor" required>
-
-                            <option value="">
-                                Selecione
-                            </option>
-
-                            <option value="Chocolate">
-                                Chocolate
-                            </option>
-
-                            <option value="Morango">
-                                Morango
-                            </option>
-
-                            <option value="Coco">
-                                Coco
-                            </option>
-
-                            <option value="Doce de leite">
-                                Doce de leite
-                            </option>
-
-                            <option value="Abacaxi">
-                                Abacaxi
-                            </option>
-
-                            <option value="Outro">
-                                Outro
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="field">
-
-                        <label>
-                            Quantidade
-                            <span class="required">*</span>
-                        </label>
-
-                        <input
-                            type="number"
-                            name="quantidade"
-                            id="quantidade"
-                            min="1"
-                            max="20"
-                            value="1"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="field full">
-
-                        <label>
-                            Recheio
-                        </label>
-
-                        <input
-                            type="text"
-                            name="recheio"
-                            id="recheio"
-                            placeholder="Ex.: brigadeiro, ninho, doce de leite..."
-                        >
-
-                    </div>
-
-
-                    <div class="field full">
-
-                        <label>
-                            Cobertura / decoração
-                        </label>
-
-                        <input
-                            type="text"
-                            name="cobertura"
-                            id="cobertura"
-                            placeholder="Ex.: chantilly rosa com morangos"
-                        >
-
-                    </div>
-
-
-                    <div class="field full">
-
-                        <label>
-                            Mensagem no bolo
-                        </label>
-
-                        <input
-                            type="text"
-                            name="mensagem_bolo"
-                            id="mensagemBolo"
-                            placeholder="Ex.: Feliz aniversário, Maria!"
-                        >
-
-                    </div>
-
-
-                    <div class="field full">
-
-                        <label>
-                            Endereço / local de entrega
-                            <span class="required">*</span>
-                        </label>
-
-                        <input
-                            type="text"
-                            name="endereco"
-                            id="endereco"
-                            placeholder="Rua, número, bairro..."
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="field full">
-
-                        <label>
-                            Observações
-                        </label>
-
-                        <textarea
-                            name="observacoes"
-                            id="observacoes"
-                            placeholder="Conte algum detalhe importante sobre sua encomenda..."
-                        ></textarea>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="btn submit-btn"
-                >
-                    🎂 Enviar minha encomenda
-                </button>
-
-
-                <div
-                    class="success-message"
-                    id="successMessage"
-                >
-                    Sua encomenda foi enviada!
-                    Aguarde nosso contato para confirmar
-                    disponibilidade, valor e entrega.
-                </div>
-
-            </form>
-
-        </div>
-
-
-        <!-- RESUMO -->
-
-        <aside class="summary-card">
-
-            <h2>Resumo</h2>
-
-            <div class="summary-box">
-
-                <div class="summary-row">
-                    <span>Bolo</span>
-                    <strong id="resumoBolo">
-                        —
-                    </strong>
-                </div>
-
-                <div class="summary-row">
-                    <span>Tamanho</span>
-                    <strong id="resumoTamanho">
-                        —
-                    </strong>
-                </div>
-
-                <div class="summary-row">
-                    <span>Sabor</span>
-                    <strong id="resumoSabor">
-                        —
-                    </strong>
-                </div>
-
-                <div class="summary-row">
-                    <span>Quantidade</span>
-                    <strong id="resumoQuantidade">
-                        1
-                    </strong>
-                </div>
-
-                <div class="summary-row">
-                    <span>Entrega</span>
-                    <strong id="resumoData">
-                        —
-                    </strong>
-                </div>
-
-                <div class="summary-row">
-                    <span>Cliente</span>
-                    <strong id="resumoCliente">
-                        —
-                    </strong>
-                </div>
-
-            </div>
-
-            <p class="summary-note">
-                💡 O valor final do bolo será informado
-                pela nossa equipe após analisarmos
-                sua encomenda e os detalhes da decoração.
-            </p>
-
-        </aside>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <h3>J E Divinos Bolos</h3>
-
-    <p>
-        Bolos feitos com carinho para momentos especiais.
-    </p>
-
-    <p style="margin-top:10px;">
-        © 2026 J E Divinos Bolos — Todos os direitos reservados.
-    </p>
-
-</footer>
-
-
-<script>
-
-    // ELEMENTOS
-
-    const form = document.getElementById("orderForm");
-
-    const tipoBolo = document.getElementById("tipoBolo");
-    const tamanho = document.getElementById("tamanho");
-    const sabor = document.getElementById("sabor");
-    const quantidade = document.getElementById("quantidade");
-
-    const dataEntrega = document.getElementById("dataEntrega");
-
-    const resumoBolo = document.getElementById("resumoBolo");
-    const resumoTamanho = document.getElementById("resumoTamanho");
-    const resumoSabor = document.getElementById("resumoSabor");
-    const resumoQuantidade = document.getElementById("resumoQuantidade");
-    const resumoData = document.getElementById("resumoData");
-    const resumoCliente = document.getElementById("resumoCliente");
-
-    const nome = document.querySelector('input[name="nome"]');
-
-
-    // IMPEDE DATA PASSADA
-
-    const hoje = new Date();
-
-    const ano = hoje.getFullYear();
-    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
-    const dia = String(hoje.getDate()).padStart(2, "0");
-
-    dataEntrega.min = `${ano}-${mes}-${dia}`;
-
-
-    // ATUALIZA RESUMO
-
-    function atualizarResumo() {
-
-        resumoBolo.textContent =
-            tipoBolo.value || "—";
-
-        resumoTamanho.textContent =
-            tamanho.value || "—";
-
-        resumoSabor.textContent =
-            sabor.value || "—";
-
-        resumoQuantidade.textContent =
-            quantidade.value || "1";
-
-        resumoCliente.textContent =
-            nome.value || "—";
-
-        if (dataEntrega.value) {
-
-            const partes = dataEntrega.value.split("-");
-
-            resumoData.textContent =
-                `${partes[2]}/${partes[1]}/${partes[0]}`;
-
-        } else {
-
-            resumoData.textContent = "—";
-
-        }
-    }
-
-
-    // CAMPOS QUE ATUALIZAM RESUMO
-
-    [
-        tipoBolo,
-        tamanho,
-        sabor,
-        quantidade,
-        dataEntrega,
-        nome
-    ].forEach(campo => {
-
-        campo.addEventListener(
-            "input",
-            atualizarResumo
-        );
-
-        campo.addEventListener(
-            "change",
-            atualizarResumo
-        );
-
-    });
-
-
-    // FORMATA TELEFONE
-
-    const telefone =
-        document.querySelector('input[name="telefone"]');
-
-    telefone.addEventListener("input", function () {
-
-        let valor = this.value.replace(/\D/g, "");
-
-        if (valor.length > 11) {
-            valor = valor.substring(0, 11);
-        }
-
-        if (valor.length <= 10) {
-
-            valor = valor.replace(
-                /^(\d{2})(\d{4})(\d{0,4}).*/,
-                "($1) $2-$3"
-            );
-
-        } else {
-
-            valor = valor.replace(
-                /^(\d{2})(\d{5})(\d{0,4}).*/,
-                "($1) $2-$3"
-            );
-
-        }
-
-        this.value = valor;
-
-    });
-
-
-    // ENVIO
-
-    form.addEventListener("submit", function () {
-
-        /*
-         * O formulário continuará com POST normal
-         * para o FormSubmit.
-         *
-         * Esta função apenas mostra uma mensagem
-         * antes do redirecionamento.
-         */
-
-        const botao =
-            form.querySelector(".submit-btn");
-
-        botao.textContent =
-            "Enviando encomenda...";
-
-        botao.disabled = true;
-
-    });
-
-
-    // INICIALIZA
-
-    atualizarResumo();
-
-</script>
-
-</body>
-</html>
+            Itaim
